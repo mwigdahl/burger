@@ -1,26 +1,24 @@
 //require connection export
 var connection = require("./connection.js");
 
-// create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-
-
 var orm = {
-    selectAll: function(whatToSelect, tableInput) {
-        var queryString = "SELECT ?? FROM ??"; 
-        connection.query(queryString, [whatToSelect, tableInput], function(err, res) {
-            if (err) throw err;
-            console.log(res);
-            
-        });
+  selectAll: function(tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
     },
-    insertOne: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
+    insertOne: function(tableInput, cols, vals, cb) {
+        var queryString = "INSERT INTO " + tableInput;
 
         queryString += " (";
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += vals.toString();
         queryString += ") ";
 
         connection.query(queryString, vals, function(err, result) {
@@ -48,7 +46,7 @@ var orm = {
           cb(result);
         });
       }
-    },
+    }
 
 
 module.exports = orm;

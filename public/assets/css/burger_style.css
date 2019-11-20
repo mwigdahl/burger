@@ -1,0 +1,56 @@
+body {
+  background: green;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align:center;
+}
+
+
+button {
+  background: red;
+  border: 0px;
+  padding: 5px 20px;
+  margin: 10px;
+  color: white;
+}
+
+img {
+  width: 200px;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+input {
+  padding: 10px 20px;
+}
+
+.table {
+  width: 100%;
+  position: relative;
+}
+
+.lower-table {
+    padding-top:200px;
+}
+
+li {
+    border:1px solid white;
+    background: #f2f2f2;
+    margin:5px;
+    list-style: none;
+    padding: 0px 10px;
+
+}
+
+#what-to-eat,#already-ate {
+  float: left;
+  width: 50%;
+  text-align: left;
+  padding-left: 20px;
+  box-sizing: border-box;
+}

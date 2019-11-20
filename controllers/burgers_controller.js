@@ -15,10 +15,22 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burgers", function(req, res) {
-  burger.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function(result) {
+router.get("/api/burgers", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = {
+      burgers: data
+    };
+    res.json(hbsObject);
+  });
+});
+
+router.post("/", function(req, res) {
+  console.log("req.body", req.body);
+  
+  burger.create(req.body.name, function(result) {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+    console.log('req.body.name', req.body.name);
+    res.json(result);
   });
 });
 
