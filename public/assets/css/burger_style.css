@@ -5,9 +5,8 @@ body {
 }
 
 h2 {
-    text-align:center;
+  text-align: center;
 }
-
 
 button {
   background: red;
@@ -35,20 +34,20 @@ input {
 }
 
 .lower-table {
-    padding-top:50px;
-    clear:both;
+  padding-top: 50px;
+  clear: both;
 }
 
 li {
-    border:1px solid white;
-    background: #f2f2f2;
-    margin:5px;
-    list-style: none;
-    padding: 0px 10px;
-
+  border: 1px solid white;
+  background: #f2f2f2;
+  margin: 5px;
+  list-style: none;
+  padding: 0px 10px;
 }
 
-#what-to-eat,#already-ate {
+#what-to-eat,
+#already-ate {
   float: left;
   width: 50%;
   text-align: left;
