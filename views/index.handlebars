@@ -7,10 +7,7 @@
 <ul>
   {{#each burgers}}
   {{#unless devoured}}
-      <li>{{ burger_name }}: {{ id }}  : {{ devoured }}
-              <form action="/api/burgers/{{this.id}}" method="put">
-                <button type="submit">Devour it!</button>
-              </form>
+      <li>{{ burger_name }} <button class="devour-it" data-id="{{id}}">Devour It!</button>
 </li>
   {{/unless}}
   {{/each}}
@@ -22,7 +19,7 @@
 <ul>
   {{#each burgers}}
   {{#if devoured}}
-      <li>{{ burger_name }}: {{ id }}  : {{ devoured }} </li>
+      <li>{{ burger_name }} </li>
       {{/if}}
   {{/each}}
 </ul>
